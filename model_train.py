@@ -79,14 +79,13 @@ if __name__ == '__main__':
     # 读取训练集和测试集数据
     input_train, result_train = read_data(train_file_path)
     input_test, result_test = read_data(test_file_path)
-    for sent, tag in zip(input_train[:10], result_train[:10]):
-        print(sent, tag)
-    for sent, tag in zip(input_test[:10], result_test[:10]):
-        print(sent, tag)
+    # for sent, tag in zip(input_train[:10], result_train[:10]):
+    #     print(sent, tag)
+    # for sent, tag in zip(input_test[:10], result_test[:10]):
+    #     print(sent, tag)
 
     # 训练集
     input_train_labels, input_train_types = PreProcessInputData(input_train)
-    print(input_train_types[0])
     result_train = PreProcessOutputData(result_train)
     # 测试集
     input_test_labels, input_test_types = PreProcessInputData(input_test)
