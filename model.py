@@ -8,7 +8,6 @@ from keras.layers import *
 from keras.models import Model
 from keras_bert import load_trained_model_from_checkpoint, build_model_from_config, load_model_weights_from_checkpoint
 from keras_contrib.layers import CRF
-
 from util import event_type, BASE_MODEL_DIR
 
 
@@ -18,6 +17,7 @@ class BertBilstmCRF:
         self.max_seq_length = max_seq_length
         self.lstmDim = lstm_dim
         self.label = self.load_label()
+        print('init success')
 
     # 抽取的标签
     def load_label(self):
