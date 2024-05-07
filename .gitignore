@@ -2,3 +2,8 @@ chinese_L-12_H-768_A-12/bert_model*
 nezha_base
 *.h5
 example_loss_acc.png
+__pycache__
+/data/__pycache__
+h5_2_tensorflow_serving/__pycache__
+/model/*.h5
+.idea
