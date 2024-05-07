@@ -17,7 +17,6 @@ class BertBilstmCRF:
         self.max_seq_length = max_seq_length
         self.lstmDim = lstm_dim
         self.label = self.load_label()
-        print('init success')
 
     # 抽取的标签
     def load_label(self):
@@ -45,7 +44,11 @@ class BertBilstmCRF:
                                       return_sequences=True,
                                       dropout=0.2,
                                       recurrent_dropout=0.2))(bert.output)
+        print("bert.output shape: {}".format(bert.output.shape))  # shape: (?, 128, 768)
+        print("lstm_out.shape: {}".format(lstm_out.shape))  # shape: (?, ?, 192)
+
         crf_out = CRF(len(self.label), sparse_target=True)(lstm_out)
+        print("crf_out.shape: {}".format(crf_out.shape))  # shape: (?, ?, 7)
         model = Model(bert.input, crf_out)
         model.summary()
         return model

@@ -98,7 +98,7 @@ if __name__ == '__main__':
         warmup_proportion=0.2,
     )
     optimizer = AdamWarmup(total_steps, warmup_steps, lr=1e-4, min_lr=1e-7)
-    model = BertBilstmCRF(max_seq_length=MAX_SEQ_LEN, lstm_dim=64).create_model()
+    model = BertBilstmCRF(max_seq_length=MAX_SEQ_LEN, lstm_dim=96).create_model()
     model.compile(
         optimizer=optimizer,
         loss=crf_loss,
