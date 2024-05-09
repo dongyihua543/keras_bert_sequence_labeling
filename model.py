@@ -50,5 +50,5 @@ class BertBilstmCRF:
         crf_out = CRF(len(self.label), sparse_target=True)(lstm_out)
         print("crf_out.shape: {}".format(crf_out.shape))  # shape: (?, ?, 7)
         model = Model(bert.input, crf_out)
-        model.summary()
+        model.summary(line_length=180)
         return model
