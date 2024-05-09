@@ -8,6 +8,9 @@ from tensorflow.keras.layers import LSTM, Bidirectional
 
 """
 测试LSTM的输出
+
+dropout=0.2: 每个时间步的输入数据中有20%的神经元被随机失活(有20%的输入数据被随机置为0);
+recurrent_dropout=0.2: 每个时间步的状态向量中有20%的神经元被随机失活(有20%的状态向量会被随机置为0)
 """
 
 # 开启 eager 模式 (TF 1.15)

@@ -40,6 +40,9 @@ class BertBilstmCRF:
         # x1 = Input(shape=(None,))
         # x2 = Input(shape=(None,))
         # bert_out = bert([x1, x2])
+
+        # dropout=0.2: 每个时间步的输入数据中有20%的神经元被随机失活(有20%的输入数据被随机置为0);
+        # recurrent_dropout=0.2: 每个时间步的状态向量中有20%的神经元被随机失活(有20%的状态向量会被随机置为0)
         lstm_out = Bidirectional(LSTM(self.lstmDim,
                                       return_sequences=True,
                                       dropout=0.2,
