@@ -20,6 +20,6 @@ ENV CUDA_HOME /usr/local/cuda-11.6/
 RUN apt-get update && apt-get install -y wget git make vim tmux
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone
 RUN pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
-RUN pip3 install /root/.ssh/keras-contrib-master.zip
+#RUN pip3 install /root/.ssh/keras-contrib-master.zip
 
 ENV HTTP_PROXY="" HTTPS_PROXY=""
